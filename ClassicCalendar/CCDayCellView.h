@@ -13,7 +13,8 @@ typedef enum
     TypeNormal,
     TypeSaturday,
     TypeHolidayOrSunday,
-    TypeExcess
+    TypeExcess,
+    TypeExcessSunday
 }CCDayType;
 
 @interface CCDayCellView : UIView

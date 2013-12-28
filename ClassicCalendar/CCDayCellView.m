@@ -47,6 +47,12 @@
             case TypeExcess:
                 color = [UIColor grayColor];
                 break;
+            case TypeExcessSunday:
+                color = [UIColor colorWithRed:1.0
+                                        green:0.5
+                                         blue:0.5
+                                        alpha:1.0];
+                break;
                 
             default:
                 color = [UIColor blackColor];

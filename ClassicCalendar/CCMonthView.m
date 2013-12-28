@@ -95,7 +95,7 @@
                 CCDayType dayType = TypeNormal;
                 
                 if (offset > -1 || monthIsOverlapped) {
-                    dayType = TypeExcess;
+                    dayType = (j == COLS - 1 ? TypeExcessSunday : TypeExcess);
                 } else if (j == COLS - 2) {
                     dayType = TypeSaturday;
                 } else if (j == COLS - 1) {
