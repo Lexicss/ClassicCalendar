@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CCViewController : UIViewController
+@interface CCMainViewController : UIViewController
+
+@property(nonatomic, strong) UIScrollView *scrollView;
 
 @end

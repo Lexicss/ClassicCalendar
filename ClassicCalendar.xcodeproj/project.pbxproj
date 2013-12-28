@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A68948186F3B2300B0FD2B /* CCMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A68947186F3B2300B0FD2B /* CCMonthView.m */; };
 		84AA4C98186EFD0D00F80B28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AA4C97186EFD0D00F80B28 /* Foundation.framework */; };
 		84AA4C9A186EFD0D00F80B28 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AA4C99186EFD0D00F80B28 /* CoreGraphics.framework */; };
 		84AA4C9C186EFD0D00F80B28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AA4C9B186EFD0D00F80B28 /* UIKit.framework */; };
 		84AA4CA2186EFD0D00F80B28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4CA0186EFD0D00F80B28 /* InfoPlist.strings */; };
 		84AA4CA4186EFD0D00F80B28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4CA3186EFD0D00F80B28 /* main.m */; };
 		84AA4CA8186EFD0D00F80B28 /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4CA7186EFD0D00F80B28 /* CCAppDelegate.m */; };
-		84AA4CAB186EFD0D00F80B28 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4CA9186EFD0D00F80B28 /* Main_iPhone.storyboard */; };
-		84AA4CAE186EFD0D00F80B28 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4CAC186EFD0D00F80B28 /* Main_iPad.storyboard */; };
-		84AA4CB1186EFD0D00F80B28 /* CCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4CB0186EFD0D00F80B28 /* CCViewController.m */; };
+		84AA4CB1186EFD0D00F80B28 /* CCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4CB0186EFD0D00F80B28 /* CCMainViewController.m */; };
 		84AA4CB3186EFD0D00F80B28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4CB2186EFD0D00F80B28 /* Images.xcassets */; };
 		84AA4CBA186EFD0D00F80B28 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AA4CB9186EFD0D00F80B28 /* XCTest.framework */; };
 		84AA4CBB186EFD0D00F80B28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AA4C97186EFD0D00F80B28 /* Foundation.framework */; };
 		84AA4CBC186EFD0D00F80B28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AA4C9B186EFD0D00F80B28 /* UIKit.framework */; };
 		84AA4CC4186EFD0D00F80B28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4CC2186EFD0D00F80B28 /* InfoPlist.strings */; };
 		84AA4CC6186EFD0D00F80B28 /* ClassicCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4CC5186EFD0D00F80B28 /* ClassicCalendarTests.m */; };
+		84AA4CD1186EFDAF00F80B28 /* CCAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4CD0186EFDAF00F80B28 /* CCAPI.m */; };
+		84AA4CD4186F067F00F80B28 /* CCDayCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4CD3186F067F00F80B28 /* CCDayCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84A68946186F3B2300B0FD2B /* CCMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMonthView.h; sourceTree = "<group>"; };
+		84A68947186F3B2300B0FD2B /* CCMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMonthView.m; sourceTree = "<group>"; };
 		84AA4C94186EFD0D00F80B28 /* ClassicCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassicCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AA4C97186EFD0D00F80B28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84AA4C99186EFD0D00F80B28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,16 +48,18 @@
 		84AA4CA5186EFD0D00F80B28 /* ClassicCalendar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassicCalendar-Prefix.pch"; sourceTree = "<group>"; };
 		84AA4CA6186EFD0D00F80B28 /* CCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
 		84AA4CA7186EFD0D00F80B28 /* CCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
-		84AA4CAA186EFD0D00F80B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		84AA4CAD186EFD0D00F80B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		84AA4CAF186EFD0D00F80B28 /* CCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
-		84AA4CB0186EFD0D00F80B28 /* CCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCViewController.m; sourceTree = "<group>"; };
+		84AA4CAF186EFD0D00F80B28 /* CCMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMainViewController.h; sourceTree = "<group>"; };
+		84AA4CB0186EFD0D00F80B28 /* CCMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCMainViewController.m; sourceTree = "<group>"; };
 		84AA4CB2186EFD0D00F80B28 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84AA4CB8186EFD0D00F80B28 /* ClassicCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassicCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AA4CB9186EFD0D00F80B28 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		84AA4CC1186EFD0D00F80B28 /* ClassicCalendarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ClassicCalendarTests-Info.plist"; sourceTree = "<group>"; };
 		84AA4CC3186EFD0D00F80B28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84AA4CC5186EFD0D00F80B28 /* ClassicCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassicCalendarTests.m; sourceTree = "<group>"; };
+		84AA4CCF186EFDAF00F80B28 /* CCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPI.h; sourceTree = "<group>"; };
+		84AA4CD0186EFDAF00F80B28 /* CCAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAPI.m; sourceTree = "<group>"; };
+		84AA4CD2186F067F00F80B28 /* CCDayCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDayCellView.h; sourceTree = "<group>"; };
+		84AA4CD3186F067F00F80B28 /* CCDayCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDayCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84A68945186F3AF500B0FD2B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84AA4CD2186F067F00F80B28 /* CCDayCellView.h */,
+				84AA4CD3186F067F00F80B28 /* CCDayCellView.m */,
+				84A68946186F3B2300B0FD2B /* CCMonthView.h */,
+				84A68947186F3B2300B0FD2B /* CCMonthView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		84AA4C8B186EFD0D00F80B28 = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +130,13 @@
 		84AA4C9D186EFD0D00F80B28 /* ClassicCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				84A68945186F3AF500B0FD2B /* Views */,
 				84AA4CA6186EFD0D00F80B28 /* CCAppDelegate.h */,
 				84AA4CA7186EFD0D00F80B28 /* CCAppDelegate.m */,
-				84AA4CA9186EFD0D00F80B28 /* Main_iPhone.storyboard */,
-				84AA4CAC186EFD0D00F80B28 /* Main_iPad.storyboard */,
-				84AA4CAF186EFD0D00F80B28 /* CCViewController.h */,
-				84AA4CB0186EFD0D00F80B28 /* CCViewController.m */,
+				84AA4CAF186EFD0D00F80B28 /* CCMainViewController.h */,
+				84AA4CB0186EFD0D00F80B28 /* CCMainViewController.m */,
+				84AA4CCF186EFDAF00F80B28 /* CCAPI.h */,
+				84AA4CD0186EFDAF00F80B28 /* CCAPI.m */,
 				84AA4CB2186EFD0D00F80B28 /* Images.xcassets */,
 				84AA4C9E186EFD0D00F80B28 /* Supporting Files */,
 			);
@@ -232,9 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84AA4CAE186EFD0D00F80B28 /* Main_iPad.storyboard in Resources */,
 				84AA4CB3186EFD0D00F80B28 /* Images.xcassets in Resources */,
-				84AA4CAB186EFD0D00F80B28 /* Main_iPhone.storyboard in Resources */,
 				84AA4CA2186EFD0D00F80B28 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,8 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AA4CA8186EFD0D00F80B28 /* CCAppDelegate.m in Sources */,
+				84A68948186F3B2300B0FD2B /* CCMonthView.m in Sources */,
 				84AA4CA4186EFD0D00F80B28 /* main.m in Sources */,
-				84AA4CB1186EFD0D00F80B28 /* CCViewController.m in Sources */,
+				84AA4CD1186EFDAF00F80B28 /* CCAPI.m in Sources */,
+				84AA4CB1186EFD0D00F80B28 /* CCMainViewController.m in Sources */,
+				84AA4CD4186F067F00F80B28 /* CCDayCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,22 +303,6 @@
 				84AA4CA1186EFD0D00F80B28 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		84AA4CA9186EFD0D00F80B28 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84AA4CAA186EFD0D00F80B28 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		84AA4CAC186EFD0D00F80B28 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84AA4CAD186EFD0D00F80B28 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		84AA4CC2186EFD0D00F80B28 /* InfoPlist.strings */ = {
@@ -475,6 +477,7 @@
 				84AA4CCB186EFD0D00F80B28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84AA4CCC186EFD0D00F80B28 /* Build configuration list for PBXNativeTarget "ClassicCalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +486,7 @@
 				84AA4CCE186EFD0D00F80B28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
