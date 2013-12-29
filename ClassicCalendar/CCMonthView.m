@@ -13,11 +13,19 @@
 #define ROWS 6
 #define COLS 7
 
+@interface CCMonthView ()
+@property(nonatomic, assign) BOOL shouldCenterX;
+@property(nonatomic, assign) BOOL shouldCenterY;
+
+@end
+
 @implementation CCMonthView
 @synthesize dayCells;
 
 - (id)initWithPoint:(CGPoint)point withDay:(NSUInteger)day withMonth:(NSUInteger)month forYear:(NSUInteger)year showTitle:(BOOL)showTitle {
     CGSize cellSize = [CCAPI cellSize];
+    _shouldCenterX = !point.x;
+    _shouldCenterY = !point.y;
     
     NSInteger additionalRow = (showTitle ? 2 : 1);
     CGRect frame = CGRectMake(point.x, point.y, cellSize.width * COLS, cellSize.height * (ROWS + additionalRow));
@@ -42,6 +50,7 @@
         NSInteger offset;
         NSInteger startDay;
         NSUInteger currentMonth = month;
+        NSUInteger currentYear = year;
         
         if (month == 1) {
             month = 12;
@@ -73,8 +82,8 @@
         
         if (showTitle) {
             UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cellSize.width * COLS, cellSize.height)];
-            [titleLabel setText:[CCAPI nameForMonth:currentMonth]];
-            [titleLabel setFont:[UIFont fontWithName:@"AmericanTypewriter" size:16]];
+            [titleLabel setText:[CCAPI nameForMonth:currentMonth withYear:currentYear]];
+            [titleLabel setFont:[UIFont fontWithName:@"AmericanTypewriter" size:[CCAPI fontSize]]];
             [titleLabel setTextAlignment:NSTextAlignmentCenter];
             
             [self addSubview:titleLabel];
@@ -94,7 +103,7 @@
                     dayType = TypeHolidayOrSunday;
                 }
                 
-                BOOL mark = (i == markI && j == markJ && i > -1);
+                BOOL mark = (i == markI && j == markJ && i > -1 && day > 0);
                 CCDayCellView *dayView;
                 CGPoint point = CGPointMake(j * (cellSize.width - 1), (i + additionalRow) * (cellSize.height - 1));
                 
@@ -122,6 +131,12 @@
             }
         }
         
+        if (_shouldCenterX) {
+            CGRect screen = [[UIScreen mainScreen] bounds];
+            CGRect currentFrame = self.frame;
+            currentFrame.origin.x = (screen.size.width - currentFrame.size.width) / 2;
+            [self setFrame:currentFrame];
+        }
     }
     
     return self;

@@ -21,8 +21,11 @@
 @implementation CCAPI
 @synthesize navigationAPI;
 
-static const int kCellWidth = 40;
-static const int kCellHeight = 20;
+static const int kCellWidth_iphone = 40;
+static const int kCellHeight_iphone = 20;
+
+static const int kCellWidth_ipad = 100;
+static const int kCellHeight_ipad = 40;
 
 static CCAPI *instance;
 
@@ -59,27 +62,42 @@ static CCAPI *instance;
 }
 
 + (CGSize)cellSize {
-    return CGSizeMake(kCellWidth, kCellHeight);
+    if (IS_IPAD) {
+        return CGSizeMake(kCellWidth_ipad, kCellHeight_ipad);
+    } else {
+        return CGSizeMake(kCellWidth_iphone, kCellHeight_iphone);
+    }
 }
 
-+ (NSString *)nameForMonth:(NSInteger)month {
++ (CGFloat)fontSize {
+    CGFloat height = (IS_IPAD ? kCellHeight_ipad : kCellHeight_iphone);
+    height -= height / 5;
+    
+    return height;
+}
+
++ (NSString *)nameForMonth:(NSInteger)month withYear:(NSInteger)year {
+    NSString *monthName;
+    
     switch (month) {
-        case 1: return @"January";
-        case 2: return @"February";
-        case 3: return @"March";
-        case 4: return @"April";
-        case 5: return @"May";
-        case 6: return @"June";
-        case 7: return @"July";
-        case 8: return @"August";
-        case 9: return @"September";
-        case 10: return @"October";
-        case 11: return @"November";
-        case 12: return @"December";
+        case 1: monthName = @"January"; break;
+        case 2: monthName = @"February"; break;
+        case 3: monthName = @"March"; break;
+        case 4: monthName = @"April"; break;
+        case 5: monthName = @"May"; break;
+        case 6: monthName = @"June"; break;
+        case 7: monthName = @"July"; break;
+        case 8: monthName = @"August"; break;
+        case 9: monthName = @"September"; break;
+        case 10: monthName = @"October"; break;
+        case 11: monthName = @"November"; break;
+        case 12: monthName = @"December"; break;
         default:
-            return @"";
+            return monthName = @"";
             break;
     }
+    
+    return [NSString stringWithFormat:@"%@, %d", monthName, year];
 }
 
 @end

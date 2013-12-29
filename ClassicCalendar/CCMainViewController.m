@@ -30,14 +30,59 @@
     [super loadView];
     
     _scrollView = [[UIScrollView alloc] init];
-    [_scrollView setBackgroundColor:[UIColor yellowColor]];
+    [_scrollView setBackgroundColor:[UIColor whiteColor]];
  
-    CCMonthView *monthView = [[CCMonthView alloc] initWithPoint:CGPointMake(10, 10)
-                                                        withDay:29
-                                                      withMonth:12
-                                                        forYear:2013
+    NSDate *today = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit
+                                               fromDate:today];
+    
+    NSInteger previousMonth;
+    NSInteger previousYear;
+    
+    if ([components month] == 1) {
+        previousMonth = 12;
+        previousYear = [components year] - 1;
+    } else {
+        previousMonth = [components month] - 1;
+        previousYear = [components year];
+    }
+    
+    CCMonthView *previousMonthView = [[CCMonthView alloc] initWithPoint:CGPointMake(0, 10)
+                                                                withDay:0
+                                                              withMonth:previousMonth
+                                                                forYear:previousYear
+                                                              showTitle:YES];
+    
+    CCMonthView *monthView = [[CCMonthView alloc] initWithPoint:CGPointMake(0, CGRectGetMaxY(previousMonthView.frame) + 10)
+                                                        withDay:[components day]
+                                                      withMonth:[components month]
+                                                        forYear:[components year]
                                                       showTitle:YES];
+    
+    NSInteger nextMonth;
+    NSInteger nextYear;
+    
+    if ([components month] == 12) {
+        nextMonth = 1;
+        nextYear = [components year] + 1;
+    } else {
+        nextMonth = [components month] + 1;
+        nextYear = [components year];
+    }
+    
+    CCMonthView *nextMonthView = [[CCMonthView alloc] initWithPoint:CGPointMake(0, CGRectGetMaxY(monthView.frame) + 10)
+                                                        withDay:0
+                                                      withMonth:nextMonth
+                                                        forYear:nextYear
+                                                      showTitle:YES];
+    [_scrollView addSubview:previousMonthView];
     [_scrollView addSubview:monthView];
+    [_scrollView addSubview:nextMonthView];
+    
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    [_scrollView setContentSize:CGSizeMake(screen.size.width, CGRectGetMaxY(nextMonthView.frame))];
+    NSLog(@"scroll: %@",NSStringFromCGSize(_scrollView.contentSize));
     
     [self setView:_scrollView];
     

@@ -9,7 +9,7 @@
 #import "CCDayCellView.h"
 #import "CCAPI.h"
 
-#define DAY_FONT [UIFont fontWithName:@"AmericanTypewriter" size:16]
+#define DAY_FONT [UIFont fontWithName:@"AmericanTypewriter" size:[CCAPI fontSize]]
 
 @interface CCDayCellView ()
 

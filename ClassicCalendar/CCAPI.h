@@ -15,6 +15,7 @@
 + (CCAPI *)instance;
 + (UINavigationController *)navigationAPI;
 + (CGSize)cellSize;
-+ (NSString *)nameForMonth:(NSInteger)month;
++ (CGFloat)fontSize;
++ (NSString *)nameForMonth:(NSInteger)month withYear:(NSInteger)year;
 
 @end
