@@ -33,7 +33,7 @@
     [_scrollView setBackgroundColor:[UIColor yellowColor]];
  
     CCMonthView *monthView = [[CCMonthView alloc] initWithPoint:CGPointMake(10, 10)
-                                                        withDay:28
+                                                        withDay:29
                                                       withMonth:12
                                                         forYear:2013
                                                       showTitle:YES];

@@ -19,6 +19,11 @@ typedef enum
 
 @interface CCDayCellView : UIView
 
-- (id)initWithPoint:(CGPoint)point withDay:(NSUInteger)day withType:(CCDayType)dayType withMark:(BOOL)mark;
+- (id)initWithPoint:(CGPoint)point
+            withDay:(NSUInteger)day
+           withType:(CCDayType)dayType
+           withMark:(BOOL)mark;
+
+- (id)initWithPoint:(CGPoint)point withWeekDay:(NSUInteger)weekDay;
 
 @end
